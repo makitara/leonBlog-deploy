@@ -28,6 +28,4 @@ services:
       backend:
         condition: service_healthy
     restart: unless-stopped
-    # 注意：前端需要在构建时设置 VITE_API_BASE_URL
-    # 如果使用相对路径，可以通过 nginx 代理 API 请求
 
