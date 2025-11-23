@@ -161,15 +161,25 @@ FRONTEND_PORT=3000
 2. 检查数据目录是否正确挂载
 3. 查看后端日志：`docker-compose logs backend`
 
-## 更新镜像
+## 更新服务
+
+当项目发布新版本时，你需要手动拉取最新镜像并重启服务：
 
 ```bash
 # 拉取最新镜像
 docker-compose pull
 
-# 重启服务
+# 重启服务（使用新镜像）
 docker-compose up -d
 ```
+
+或者使用一条命令：
+
+```bash
+docker-compose pull && docker-compose up -d
+```
+
+**注意**：`docker-compose up -d` 不会自动拉取最新镜像，它只会使用本地已有的镜像。因此更新时必须先执行 `docker-compose pull`。
 
 ## 备份数据
 
